@@ -1,0 +1,12 @@
+<ul class="list-unstyled card blog">
+  <li class="media card-body">
+    <img class="mr-3" [defaultImage]="defaultImage" [lazyLoad]="blog.image" height="120" width="130" alt="image">
+    <div class="media-body">
+      <div style="display: flex; flex-direction: column; margin-bottom: 8px;">
+        <a style="color: #535353; font-size: 18px; font-weight: 600;" [routerLink]="['/blogs','blog', blog.id]">{{blog.title}}</a>
+        <span style="font-size: 14px; color: #8f8f8f;">{{getTimeFromNow(blog.createdAt)}}</span>
+      </div>
+      <p style="font-size: 16px;">{{blog.content}}</p>
+    </div>
+  </li>
+</ul>

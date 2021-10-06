@@ -1,0 +1,14 @@
+<div>
+  <nav>
+    <ul class="pagination">
+      <li class="page-item"><a [ngClass]="{disabled: pageOld === 1}" (click)="nextPage('previous', -1)"
+          class="page-link previous">Previous</a></li>
+      <ng-container *ngFor="let item of pagesTotal">
+        <li class="page-item"><a [ngClass]="{active: pageOld === item + 1}" (click)="nextPage('', item+1)"
+            class="page-link">{{item+1}}</a></li>
+      </ng-container>
+      <li class="page-item"><a [ngClass]="{disabled: pageOld === pagesTotal.length}" (click)="nextPage('next', -1)"
+          class="page-link next">Next</a></li>
+    </ul>
+  </nav>
+</div>

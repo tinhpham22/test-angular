@@ -1,0 +1,33 @@
+.pagination {
+
+
+  .page-item {
+    cursor: pointer;
+
+
+    .page-link {
+      &.active {
+        background: #46bb71;
+        color: white;
+      }
+    }
+
+    .previous {
+      &.disabled {
+        pointer-events: none;
+        cursor: no-drop;
+        color: #c4c4c4;
+      }
+    }
+
+    .next {
+      &.disabled {
+        pointer-events: none;
+        cursor: no-drop;
+        color: #c4c4c4;
+      }
+    }
+
+  }
+
+}

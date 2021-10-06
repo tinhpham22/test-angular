@@ -1,0 +1,30 @@
+<div class="searchs">
+  <div class="card">
+    <div class="card-header">
+      <button type="button" class="btn btn-light btn-search" (click)="handerChangeSearchType('search')"
+        [ngClass]="{active: searchType ==='search'}">All</button>
+      <button type="button" class="btn btn-light btn-search" (click)="handerChangeSearchType('filter')"
+        [ngClass]="{active: searchType ==='filter'}">Filter</button>
+      <button type="button" class="btn btn-light btn-search" (click)="handerChangeSearchType('title')"
+        [ngClass]="{active: searchType ==='title'}">Title</button>
+    </div>
+    <div class="card-body">
+      <ng-container *ngIf="!isLoading; else skeletons">
+        <ng-container *ngIf="blogs.length; else empty">
+          <ng-container *ngFor="let blog of blogs">
+            <app-card-blog [blog]="blog"></app-card-blog>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+      <app-pagination [pagesTotal]="51" (changePage)="handlerSearch($event)"></app-pagination>
+    </div>
+  </div>
+</div>
+
+<ng-template #skeletons>
+  <app-skeletons [count]="5"></app-skeletons>
+</ng-template>
+
+<ng-template #empty>
+  <app-empty></app-empty>
+</ng-template>

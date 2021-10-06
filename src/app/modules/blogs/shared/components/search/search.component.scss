@@ -1,0 +1,54 @@
+.searchs {
+  margin-top: 16px;
+
+  .card {
+    &-header {
+      .btn-search {
+        width: 70px;
+        margin-right: 8px;
+
+        &.active {
+          background: #46bb71 !important;
+          color: white;
+        }
+      }
+    }
+
+    &-body {
+      .blog {
+        border-radius: 4px;
+        margin: 8px 0;
+        box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+          0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+        &-body {
+          display: flex;
+          flex-direction: row;
+
+          img {
+            border-radius: 4px;
+          }
+
+          &__info {
+            margin-left: 16px;
+
+            div {
+              display: flex;
+              flex-direction: column;
+
+              a {
+                font-size: 18px;
+                font-weight: 600;
+              }
+
+              a:hover {
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

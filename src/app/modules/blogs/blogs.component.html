@@ -1,0 +1,26 @@
+<div class="blogs">
+  <div class="form-group" style="width: 15%;">
+    <label for="select">Sắp xếp</label>
+    <select class="form-control" id="select" [(ngModel)]="selectedOrder" (change)="handlerOrder()">
+      <option *ngFor="let item of orders" [ngValue]="item.code" onchange="selectedSort($event)">{{item.name}}
+      </option>
+    </select>
+  </div>
+
+  <ng-container *ngIf="!isLoading; else skeletons">
+    <ng-container *ngIf="blogs.length; else empty">
+      <ng-container *ngFor="let blog of blogs">
+        <app-card-blog [blog]="blog"></app-card-blog>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+  <app-pagination [pagesTotal]="51" (changePage)="loadBlogs($event)"></app-pagination>
+</div>
+
+<ng-template #skeletons>
+  <app-skeletons [count]="5"></app-skeletons>
+</ng-template>
+
+<ng-template #empty>
+  <app-empty></app-empty>
+</ng-template>

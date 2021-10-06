@@ -1,0 +1,13 @@
+.app-not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  .title {
+    font-size: 22px;
+    color: rgb(22, 22, 22);
+    padding: 16px;
+  }
+}

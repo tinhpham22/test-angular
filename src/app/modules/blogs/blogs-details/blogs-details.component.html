@@ -1,0 +1,26 @@
+<div class="blog-details">
+  <div class="card">
+    <div *ngIf="!isLoading; else skeletons" class="card-body">
+      <ng-container *ngIf="blog.id; else empty">
+        <div class="body-title">
+          <h4>{{blog.title}}</h4>
+          <span>{{getTimeFromNow(blog.createdAt)}}</span>
+        </div>
+        <div class="body-content">
+          <div class="image">
+            <img height="500px" width="650px" [defaultImage]="defaultImage" [lazyLoad]="blog.image" alt="image">
+          </div>
+          <p>{{blog.content}}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #skeletons>
+  <app-skeletons [count]="10"></app-skeletons>
+</ng-template>
+
+<ng-template #empty>
+  <app-empty></app-empty>
+</ng-template>
